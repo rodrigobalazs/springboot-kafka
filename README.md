@@ -1,8 +1,8 @@
 ## Spring Boot Kafka Events
-This repository contains an Spring Boot Events Application which shows an event Producer/Consumer example implemented via Kafka.
-The Producer/Consumer communicates via a single Topic 'product-dto-topic'.
-The exchanged Event is JSON / DTO type.
-The REST API via a POST call triggers the execution of the Producer.
+This repository contains an Spring Boot Events Application which shows an event Producer/Consumer example implemented via Kafka.<br/>
+The Producer/Consumer communicates via a single Topic 'product-dto-topic'.<br/>
+The exchanged Event is JSON / DTO type.<br/>
+The REST API via a POST call triggers the execution of the Kafka Producer.
 
 ### 🔧 Technology Stack
 
@@ -41,7 +41,7 @@ mvn spring-boot:run;
 
 ### 💡 API Examples
 
-#### Sends a new JSON/DTO Event, this API call will trigger the execution of this particular Kafka Producer ProductDTOKafkaProducer.java =>
+#### 1. Sends a new Event with this ProductDTO/JSON content via this particular Kafka Producer ( ProductDTOKafkaProducer.java ) =>
 ```
 curl -X POST http://localhost:8080/events/sendProductDTO  \
      -H 'accept: application/json'  \
@@ -52,8 +52,7 @@ curl -X POST http://localhost:8080/events/sendProductDTO  \
 }';
 ```
 
-#### After the execution of the previous POST API call, the IDE console should display a log trace from the Kafka Consumer
-#### ( ProductDTOKafkaConsumer.java ) similar to this one =>
+###### After the execution of the previous POST API call, the IDE console should display a log trace from the Kafka Consumer ( ProductDTOKafkaConsumer.java ) similar to this one =>
 ```
 c.r.e.consumer.ProductDTOKafkaConsumer : received a JSON/ProductDTO event with this content => name:Tablet | available_quantity: 100
 ```

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @Tag(name = "Events Kafka API", description = "API endpoints related to Kafka Events")
 public interface EventsControllerSwagger {
 
-    @Operation(summary = "Sends a new JSON/DTO Event via a Kafka Producer",
-            description = "Sends a new JSON/DTO Event, this API call will trigger the execution of this particular Kafka Producer ProductDTOKafkaProducer.java")
+    @Operation(summary = "Sends a new Event with this ProductDTO/JSON content via a given Kafka Producer",
+            description = "This API call will trigger the execution of this particular Kafka Producer ( ProductDTOKafkaProducer.java )")
     public void sendProductDTO(@RequestBody ProductDTO productDTO);
 }
