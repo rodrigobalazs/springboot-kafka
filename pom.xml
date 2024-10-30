@@ -13,7 +13,7 @@
 	<artifactId>events-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>events-api</name>
-	<description>Events API via Apache Kafka</description>
+	<description>Events API via Kafka</description>
 	<developers>
 		<developer>
 			<name>Rodrigo Balazs</name>
@@ -26,6 +26,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring-boot.version>3.3.4</spring-boot.version>
 		<spring-kafka.version>3.2.4</spring-kafka.version>
+		<springdoc-openapi.version>2.2.0</springdoc-openapi.version>
 	</properties>
 
 	<dependencies>
@@ -44,11 +45,25 @@
 			<version>${spring-kafka.version}</version>
 		</dependency>
 
+		<!-- SpringDoc OpenAPI / Swagger -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>${springdoc-openapi.version}</version>
+		</dependency>
+
 		<!-- Junit/Testing -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+
+		<!-- Lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${lombok.version}</version>
 		</dependency>
 
 	</dependencies>

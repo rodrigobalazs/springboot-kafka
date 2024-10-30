@@ -7,5 +7,5 @@ package com.rbalazs.eventsapi.enums;
  */
 public enum AppConstants {;
 
-    public static final String STRING_TOPIC = "string-topic";
+    public static final String PRODUCT_DTO_TOPIC = "product-dto-topic";
 }
