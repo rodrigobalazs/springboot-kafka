@@ -1,5 +1,6 @@
 package com.rbalazs.eventsapi.controller.swagger;
 
+import com.rbalazs.eventsapi.controller.EventsController;
 import com.rbalazs.eventsapi.dto.ProductDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
