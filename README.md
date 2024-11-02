@@ -22,13 +22,14 @@ tar xzf kafka_2.12-3.8.1.tgz;
 sudo mv kafka_2.12-3.8.1 /opt/kafka;
 
 # start the zookeeper server
-nohup /opt/kafka/bin/zookeeper-server-start.sh /opt/kafka/config/zookeeper.properties &>/dev/null &
+cd /opt/kafka/bin;
+nohup ./zookeeper-server-start.sh ../config/zookeeper.properties &>/dev/null &
 
 # start the kafka server
-nohup /opt/kafka/bin/kafka-server-start.sh /opt/kafka/config/server.properties &>/dev/null &
+nohup ./kafka-server-start.sh ../config/server.properties &>/dev/null &
 
 # create the topic 'product-dto-topic'
-/opt/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092 --create --topic product-dto-topic;
+./kafka-topics.sh --bootstrap-server localhost:9092 --create --topic product-dto-topic;
 
 # clone the project
 git clone https://github.com/rodrigobalazs/springboot-kafka.git;
@@ -52,9 +53,11 @@ curl -X POST http://localhost:8080/events/sendProductDTO  \
 }';
 ```
 
-###### After the execution of the previous POST API call, the IDE console should display a log trace from the Kafka Consumer ( ProductDTOKafkaConsumer.java ) similar to this one =>
+-after the execution of the previous POST, the IDE console should display a log trace
+from the Kafka Consumer ( ProductDTOKafkaConsumer.java ) similar to this one =>
 ```
-c.r.e.consumer.ProductDTOKafkaConsumer : received a JSON/ProductDTO event with this content => name:Tablet | available_quantity: 100
+c.r.e.consumer.ProductDTOKafkaConsumer : received a JSON/ProductDTO event with
+this content => name:Tablet | available_quantity: 100
 ```
 
 ### 🔍 API Documentation / Swagger
