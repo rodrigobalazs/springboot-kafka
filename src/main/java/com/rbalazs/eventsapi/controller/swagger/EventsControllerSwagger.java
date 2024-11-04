@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.*;
 /**
  * Swagger interface related to {@link EventsController}.
  * API Documentation/Swagger at => http://<project_url>/swagger-ui/index.html
- *
- * @author Rodrigo Balazs
  */
 @Tag(name = "Events Kafka API", description = "API endpoints related to Kafka Events")
 public interface EventsControllerSwagger {

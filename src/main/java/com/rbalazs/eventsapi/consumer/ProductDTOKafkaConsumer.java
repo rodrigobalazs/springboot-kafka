@@ -9,8 +9,6 @@ import org.springframework.stereotype.Service;
 
 /**
  * Kafka Consumer associated to the topic 'product-dto-topic'.
- *
- * @author Rodrigo Balazs
  */
 @Service
 public class ProductDTOKafkaConsumer {

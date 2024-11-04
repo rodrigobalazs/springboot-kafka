@@ -2,8 +2,6 @@ package com.rbalazs.eventsapi.enums;
 
 /**
  * Enum which contains some application constants.
- *
- * @author Rodrigo Balazs
  */
 public enum AppConstants {;
 
